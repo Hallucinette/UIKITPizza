@@ -9,6 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+//    private let horaireText: UITextView = {
+//        let horaireText = UITextView()
+//        horaireText.text = "Toto"
+//        horaireText.textAlignment = .left
+//        horaireText.translatesAutoresizingMaskIntoConstraints = false
+//        horaireText.backgroundColor = .black
+//        return horaireText
+//    }()
+    
     private let saucissonImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Saucisson")
@@ -41,7 +50,8 @@ class ViewController: UIViewController {
     }()
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var textView: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -53,6 +63,7 @@ private extension ViewController {
     func setup() {
         self.view.backgroundColor = .white
         self.view.addSubview(saucissonImageView)
+//        self.view.addSubview(horaireText)
         self.view.addSubview(mapImageView)
         self.view.addSubview(goToMenu)
         NSLayoutConstraint.activate([
@@ -63,6 +74,13 @@ private extension ViewController {
             saucissonImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             saucissonImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
+//            //HORAIRE TEXT
+//            horaireText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -400),
+//            horaireText.heightAnchor.constraint(equalToConstant: 100),
+//            horaireText.widthAnchor.constraint(equalToConstant: 300),
+//            horaireText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+//            horaireText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
             //IMAGE MAP
             mapImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             mapImageView.heightAnchor.constraint(equalToConstant: 300),
